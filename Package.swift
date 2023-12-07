@@ -23,11 +23,20 @@ let package = Package(
           name: "SPRepositories",
           targets: ["SPRepositories"]
         ),
+        .library(
+          name: "SPCCode",
+          targets: ["SPCCode"]
+        ),
     ],
     dependencies: [
 
     ],
     targets: [
+        .target(
+            name: "SPCCode",
+            dependencies: [ ],
+            path: "./Sources/ccode"
+        ),
         .target(
             name: "SPUtils",
             dependencies: [ ],
