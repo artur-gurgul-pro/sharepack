@@ -14,7 +14,15 @@ let package = Package(
         .library(
           name: "SPContract",
           targets: ["SPContract"]
-        )
+        ),
+        .library(
+          name: "SPModels",
+          targets: ["SPModels"]
+        ),
+        .library(
+          name: "SPRepositories",
+          targets: ["SPRepositories"]
+        ),
     ],
     dependencies: [
 
@@ -27,8 +35,18 @@ let package = Package(
         ),
         .target(
             name: "SPContract",
-            dependencies: [ ],
+            dependencies: [ "SPModels" ],
             path: "./Sources/contract"
+        ),
+        .target(
+            name: "SPModels",
+            dependencies: [ ],
+            path: "./Sources/models"
+        ),
+        .target(
+            name: "SPRepositories",
+            dependencies: [ "SPModels", "SPContract" ],
+            path: "./Sources/repositories"
         ),
     ]
 )
