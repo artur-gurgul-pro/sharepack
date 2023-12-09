@@ -35,7 +35,10 @@ let package = Package(
         .target(
             name: "SPCCode",
             dependencies: [ ],
-            path: "./Sources/ccode"
+            path: "./Sources/ccode",
+            cSettings: [
+                .headerSearchPath("./Sources/ccode/include"),
+            ]
         ),
         .target(
             name: "SPUtils",

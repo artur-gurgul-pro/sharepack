@@ -7,4 +7,7 @@ struct MyPoint {
    int y;
 };
 
+int fib(int n);
+int call(int n);
+
 #endif
